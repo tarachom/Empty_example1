@@ -46,7 +46,7 @@
 
  <b>Клонування репозиторіїв</b>
     
-    git clone https://github.com/tarachom/Empty.git
+    git clone https://github.com/tarachom/Empty_example1.git
     git clone https://github.com/tarachom/Configurator3.git
     git clone https://github.com/tarachom/AccountingSoftwareLib.git
     
