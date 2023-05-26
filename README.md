@@ -1,5 +1,5 @@
-# Чиста конфігурація для розробки
- <img src="https://accounting.org.ua/images/preferences.png?v=3" /> <b>Базові класи і функції для розробки нової програми або навчання </b> | .net 7, Linux, Windows <br/>
+# Приклад конфігурації - Документи, Регістри накопичення, Звіти
+ <img src="https://accounting.org.ua/images/preferences.png?v=3" /> <b>Приклад конфігурації</b> | .net 7, Linux, Windows <br/>
 
  <hr />
 
