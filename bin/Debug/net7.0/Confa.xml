@@ -6,7 +6,7 @@
   </Author>
   <Desc>
   </Desc>
-  <DateTimeSave>26.05.2023 13:59:03</DateTimeSave>
+  <DateTimeSave>26.05.2023 14:08:32</DateTimeSave>
   <ConstantsBlocks>
     <ConstantsBlock>
       <Name>Системні</Name>
@@ -459,7 +459,7 @@
           <Desc>Назва</Desc>
           <IsPresentation>1</IsPresentation>
           <IsIndex>1</IsIndex>
-          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsFullTextSearch>1</IsFullTextSearch>
           <Multiline>0</Multiline>
         </Field>
         <Field>
@@ -470,7 +470,7 @@
           </Desc>
           <IsPresentation>0</IsPresentation>
           <IsIndex>0</IsIndex>
-          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsFullTextSearch>1</IsFullTextSearch>
           <Multiline>1</Multiline>
         </Field>
       </Fields>
@@ -567,7 +567,7 @@
           <Desc>Назва</Desc>
           <IsPresentation>1</IsPresentation>
           <IsIndex>1</IsIndex>
-          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsFullTextSearch>1</IsFullTextSearch>
           <Multiline>0</Multiline>
         </Field>
       </Fields>
@@ -656,7 +656,7 @@
           <Desc>Назва</Desc>
           <IsPresentation>1</IsPresentation>
           <IsIndex>1</IsIndex>
-          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsFullTextSearch>1</IsFullTextSearch>
           <Multiline>0</Multiline>
         </Field>
         <Field>
@@ -685,7 +685,7 @@
           <Desc>Коментар</Desc>
           <IsPresentation>0</IsPresentation>
           <IsIndex>0</IsIndex>
-          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsFullTextSearch>1</IsFullTextSearch>
           <Multiline>0</Multiline>
         </Field>
         <Field>
@@ -696,7 +696,7 @@
           <Desc>
           </Desc>
           <IsPresentation>0</IsPresentation>
-          <IsIndex>0</IsIndex>
+          <IsIndex>1</IsIndex>
           <IsFullTextSearch>0</IsFullTextSearch>
         </Field>
         <Field>
@@ -727,7 +727,7 @@
           <Desc>
           </Desc>
           <IsPresentation>0</IsPresentation>
-          <IsIndex>0</IsIndex>
+          <IsIndex>1</IsIndex>
           <IsFullTextSearch>0</IsFullTextSearch>
         </Field>
         <Field>
@@ -738,7 +738,7 @@
           <Desc>
           </Desc>
           <IsPresentation>0</IsPresentation>
-          <IsIndex>0</IsIndex>
+          <IsIndex>1</IsIndex>
           <IsFullTextSearch>0</IsFullTextSearch>
         </Field>
         <Field>
@@ -907,7 +907,7 @@
           <Desc>Назва</Desc>
           <IsPresentation>1</IsPresentation>
           <IsIndex>1</IsIndex>
-          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsFullTextSearch>1</IsFullTextSearch>
           <Multiline>0</Multiline>
         </Field>
         <Field>
@@ -936,7 +936,7 @@
           <Desc>Коментар</Desc>
           <IsPresentation>0</IsPresentation>
           <IsIndex>0</IsIndex>
-          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsFullTextSearch>1</IsFullTextSearch>
           <Multiline>0</Multiline>
         </Field>
         <Field>
@@ -947,7 +947,7 @@
           <Desc>
           </Desc>
           <IsPresentation>0</IsPresentation>
-          <IsIndex>0</IsIndex>
+          <IsIndex>1</IsIndex>
           <IsFullTextSearch>0</IsFullTextSearch>
         </Field>
         <Field>

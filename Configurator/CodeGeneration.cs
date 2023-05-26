@@ -27,7 +27,7 @@ limitations under the License.
  * Конфігурації "Нова конфігурація"
  * Автор 
   
- * Дата конфігурації: 26.05.2023 13:59:03
+ * Дата конфігурації: 26.05.2023 14:08:32
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон CodeGeneration.xslt
@@ -947,7 +947,7 @@ namespace StorageAndTrade_1_0.Довідники
             if (result)
             {
                 Номенклатура_Triggers.AfterSave(this);
-                BaseWriteFullTextSearch(GetBasis(), new string[] {  });
+                BaseWriteFullTextSearch(GetBasis(), new string[] { Назва, Опис });
             }
             return result;
         }
@@ -1146,7 +1146,7 @@ namespace StorageAndTrade_1_0.Довідники
             if (result)
             {
                 Склад_Triggers.AfterSave(this);
-                BaseWriteFullTextSearch(GetBasis(), new string[] {  });
+                BaseWriteFullTextSearch(GetBasis(), new string[] { Назва });
             }
             return result;
         }
@@ -1566,7 +1566,7 @@ namespace StorageAndTrade_1_0.Документи
             if (result)
             {
                 ПоступленняТоварів_Triggers.AfterSave(this);
-                BaseWriteFullTextSearch(GetBasis(), new string[] {  });
+                BaseWriteFullTextSearch(GetBasis(), new string[] { Назва, Коментар });
             }
 
             return result;
@@ -1910,7 +1910,7 @@ namespace StorageAndTrade_1_0.Документи
             if (result)
             {
                 ПродажТоварів_Triggers.AfterSave(this);
-                BaseWriteFullTextSearch(GetBasis(), new string[] {  });
+                BaseWriteFullTextSearch(GetBasis(), new string[] { Назва, Коментар });
             }
 
             return result;
