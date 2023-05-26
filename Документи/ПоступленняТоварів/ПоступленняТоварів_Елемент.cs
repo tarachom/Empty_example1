@@ -94,7 +94,10 @@ namespace StorageAndTrade
         public override void SetValue()
         {
             if (IsNew)
+            {
                 ПоступленняТоварів_Objest.New();
+                ПоступленняТоварів_Objest.Склад = ЗначенняЗаЗамовчуванням.ОсновнийСклад_Const;
+            }
 
             ДатаДок.Value = ПоступленняТоварів_Objest.ДатаДок;
             НомерДок.Text = ПоступленняТоварів_Objest.НомерДок;

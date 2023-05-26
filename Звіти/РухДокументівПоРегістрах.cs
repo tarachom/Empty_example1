@@ -41,6 +41,7 @@ namespace StorageAndTrade
             columns.Add("income", "Рух");
             columns.Add("period", "Період");
             columns.Add("Номенклатура_Назва", "Номенклатура");
+            columns.Add("Склад_Назва", "Склад");
             columns.Add("Кількість", "Кількість");
             columns.Add("Сума", "Сума");
 
@@ -52,6 +53,7 @@ namespace StorageAndTrade
             Dictionary<string, string> columns = new Dictionary<string, string>();
 
             columns.Add("Номенклатура_Назва", "Номенклатура");
+            columns.Add("Склад_Назва", "Склад");
 
             return columns;
         }
@@ -61,6 +63,7 @@ namespace StorageAndTrade
             Dictionary<string, string> columns = new Dictionary<string, string>();
 
             columns.Add("Номенклатура_Назва", Номенклатура_Const.POINTER);
+            columns.Add("Склад_Назва", Склад_Const.POINTER);
 
             return columns;
         }
@@ -92,6 +95,8 @@ SELECT
     Рег_Товари.period, 
     Рег_Товари.{Товари_Const.Номенклатура} AS Номенклатура, 
     Довідник_Номенклатура.{Номенклатура_Const.Назва} AS Номенклатура_Назва, 
+    Рег_Товари.{Товари_Const.Склад} AS Склад, 
+    Довідник_Склад.{Склад_Const.Назва} AS Склад_Назва, 
     Рег_Товари.{Товари_Const.Кількість} AS Кількість,
     Рег_Товари.{Товари_Const.Сума} AS Сума
 FROM 
@@ -99,6 +104,9 @@ FROM
 
     LEFT JOIN {Номенклатура_Const.TABLE} AS Довідник_Номенклатура ON Довідник_Номенклатура.uid = 
         Рег_Товари.{Товари_Const.Номенклатура}
+
+    LEFT JOIN {Склад_Const.TABLE} AS Довідник_Склад ON Довідник_Склад.uid = 
+        Рег_Товари.{Товари_Const.Склад}
 
 WHERE
     Рег_Товари.Owner = @ДокументВказівник

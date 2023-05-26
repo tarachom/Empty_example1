@@ -6,7 +6,7 @@
   </Author>
   <Desc>
   </Desc>
-  <DateTimeSave>26.05.2023 13:45:25</DateTimeSave>
+  <DateTimeSave>26.05.2023 13:59:03</DateTimeSave>
   <ConstantsBlocks>
     <ConstantsBlock>
       <Name>Системні</Name>
@@ -176,6 +176,22 @@
           <Desc>
           </Desc>
           <Type>integer</Type>
+          <TabularParts />
+        </Constant>
+      </Constants>
+    </ConstantsBlock>
+    <ConstantsBlock>
+      <Name>ЗначенняЗаЗамовчуванням</Name>
+      <Desc>
+      </Desc>
+      <Constants>
+        <Constant>
+          <Name>ОсновнийСклад</Name>
+          <NameInTable>col_b1</NameInTable>
+          <Desc>
+          </Desc>
+          <Type>pointer</Type>
+          <Pointer>Довідники.Склад</Pointer>
           <TabularParts />
         </Constant>
       </Constants>

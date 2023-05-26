@@ -42,6 +42,12 @@ namespace StorageAndTrade
         #region Const
 
         //
+        //Значення за замовчуванням
+        //
+
+        Склад_PointerControl ОсновнийСклад = new Склад_PointerControl();
+
+        //
         //ЖурналиДокументів
         //
 
@@ -117,7 +123,8 @@ namespace StorageAndTrade
             vBox.PackStart(hBoxInfo, false, false, 15);
             hBoxInfo.PackStart(new Label("Для заповненння нових документів та довідників"), false, false, 5);
 
-            
+            //Controls
+            AddPointerControl(vBox, ОсновнийСклад);
 
             vBoxTop.PackStart(expanderConstDefault, false, false, 10);
         }
@@ -182,7 +189,12 @@ namespace StorageAndTrade
 
         public void SetValue()
         {
-            
+            //
+            //Значення за замовчуванням
+            //
+
+            ОсновнийСклад.Pointer = Константи.ЗначенняЗаЗамовчуванням.ОсновнийСклад_Const;
+
             //
             //ЖурналиДокументів
             //
@@ -198,7 +210,12 @@ namespace StorageAndTrade
 
         void GetValue()
         {
-            
+            //
+            //Значення за замовчуванням
+            //
+
+            Константи.ЗначенняЗаЗамовчуванням.ОсновнийСклад_Const = ОсновнийСклад.Pointer;
+
             //
             //ЖурналиДокументів
             //

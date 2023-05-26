@@ -27,7 +27,7 @@ limitations under the License.
  * Конфігурації "Нова конфігурація"
  * Автор 
   
- * Дата конфігурації: 26.05.2023 13:45:25
+ * Дата конфігурації: 26.05.2023 13:59:03
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон CodeGeneration.xslt
@@ -50,6 +50,7 @@ namespace StorageAndTrade_1_0
             Константи.ПриЗапускуПрограми.ReadAll();
             Константи.НумераціяДовідників.ReadAll();
             Константи.НумераціяДокументів.ReadAll();
+            Константи.ЗначенняЗаЗамовчуванням.ReadAll();
             
         }
     }
@@ -424,6 +425,42 @@ namespace StorageAndTrade_1_0.Константи
             {
                 m_ПродажТоварів_Const = value;
                 Config.Kernel!.DataBase.SaveConstants("tab_constants", "col_a6", m_ПродажТоварів_Const);
+            }
+        }
+             
+    }
+    #endregion
+    
+	  #region CONSTANTS BLOCK "ЗначенняЗаЗамовчуванням"
+    public static class ЗначенняЗаЗамовчуванням
+    {
+        public static void ReadAll()
+        {
+            
+            Dictionary<string, object> fieldValue = new Dictionary<string, object>();
+            bool IsSelect = Config.Kernel!.DataBase.SelectAllConstants("tab_constants",
+                 new string[] { "col_b1" }, fieldValue);
+            
+            if (IsSelect)
+            {
+                m_ОсновнийСклад_Const = new Довідники.Склад_Pointer(fieldValue["col_b1"]);
+                
+            }
+			      
+        }
+        
+        
+        static Довідники.Склад_Pointer m_ОсновнийСклад_Const = new Довідники.Склад_Pointer();
+        public static Довідники.Склад_Pointer ОсновнийСклад_Const
+        {
+            get 
+            {
+                return m_ОсновнийСклад_Const.Copy();
+            }
+            set
+            {
+                m_ОсновнийСклад_Const = value;
+                Config.Kernel!.DataBase.SaveConstants("tab_constants", "col_b1", m_ОсновнийСклад_Const.UnigueID.UGuid);
             }
         }
              
