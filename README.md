@@ -1,5 +1,5 @@
-# Приклад конфігурації - Документи, Регістри накопичення, Звіти
- <img src="https://accounting.org.ua/images/preferences.png?v=3" /> <b>Приклад конфігурації</b> | .net 7, Linux, Windows <br/>
+# Приклад конфігурації №1
+ <img src="https://accounting.org.ua/images/preferences.png?v=3" /> <b>Документи, Регістри накопичення, Звіти</b> | .net 7, Linux, Windows <br/>
 
  <hr />
 
