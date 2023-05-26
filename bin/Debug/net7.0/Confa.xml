@@ -6,7 +6,7 @@
   </Author>
   <Desc>
   </Desc>
-  <DateTimeSave>26.05.2023 10:49:11</DateTimeSave>
+  <DateTimeSave>26.05.2023 13:45:25</DateTimeSave>
   <ConstantsBlocks>
     <ConstantsBlock>
       <Name>Системні</Name>
@@ -714,6 +714,26 @@
           <IsIndex>0</IsIndex>
           <IsFullTextSearch>0</IsFullTextSearch>
         </Field>
+        <Field>
+          <Name>Автор</Name>
+          <NameInTable>col_a6</NameInTable>
+          <Type>pointer</Type>
+          <Pointer>Довідники.Користувачі</Pointer>
+          <Desc>
+          </Desc>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+        </Field>
+        <Field>
+          <Name>Основа</Name>
+          <NameInTable>col_a7</NameInTable>
+          <Type>composite_pointer</Type>
+          <Desc>На основі якого документу зроблений документ</Desc>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+        </Field>
       </Fields>
       <TabularParts />
       <TabularLists>
@@ -762,6 +782,80 @@
               <Type>string</Type>
               <Pointer>
               </Pointer>
+            </Field>
+            <Field>
+              <Name>Номенклатура</Name>
+              <Caption>Номенклатура</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Номенклатура</Pointer>
+              <Join>
+                <table>Довідники.Номенклатура_Const.TABLE</table>
+                <field>Номенклатура</field>
+                <alias>join_tab_1</alias>
+              </Join>
+              <FieldAndAlias>
+                <table>join_tab_1</table>
+                <field>Довідники.Номенклатура_Const.Назва</field>
+              </FieldAndAlias>
+            </Field>
+            <Field>
+              <Name>Кількість</Name>
+              <Caption>Кількість</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>numeric</Type>
+              <Pointer>
+              </Pointer>
+            </Field>
+            <Field>
+              <Name>Сума</Name>
+              <Caption>Сума</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>numeric</Type>
+              <Pointer>
+              </Pointer>
+            </Field>
+            <Field>
+              <Name>Склад</Name>
+              <Caption>Склад</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Склад</Pointer>
+              <Join>
+                <table>Довідники.Склад_Const.TABLE</table>
+                <field>Склад</field>
+                <alias>join_tab_2</alias>
+              </Join>
+              <FieldAndAlias>
+                <table>join_tab_2</table>
+                <field>Довідники.Склад_Const.Назва</field>
+              </FieldAndAlias>
+            </Field>
+            <Field>
+              <Name>Автор</Name>
+              <Caption>Автор</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Користувачі</Pointer>
+              <Join>
+                <table>Довідники.Користувачі_Const.TABLE</table>
+                <field>Автор</field>
+                <alias>join_tab_3</alias>
+              </Join>
+              <FieldAndAlias>
+                <table>join_tab_3</table>
+                <field>Довідники.Користувачі_Const.Назва</field>
+              </FieldAndAlias>
             </Field>
           </Fields>
         </TabularList>
@@ -871,6 +965,26 @@
           <IsIndex>0</IsIndex>
           <IsFullTextSearch>0</IsFullTextSearch>
         </Field>
+        <Field>
+          <Name>Автор</Name>
+          <NameInTable>col_a6</NameInTable>
+          <Type>pointer</Type>
+          <Pointer>Довідники.Користувачі</Pointer>
+          <Desc>
+          </Desc>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+        </Field>
+        <Field>
+          <Name>Основа</Name>
+          <NameInTable>col_a7</NameInTable>
+          <Type>composite_pointer</Type>
+          <Desc>На основі якого документу зроблений документ</Desc>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+        </Field>
       </Fields>
       <TabularParts />
       <TabularLists>
@@ -895,7 +1009,7 @@
               <Caption>ДатаДок</Caption>
               <Size>0</Size>
               <SortNum>100</SortNum>
-              <SortField>False</SortField>
+              <SortField>True</SortField>
               <Type>datetime</Type>
               <Pointer>
               </Pointer>
@@ -919,6 +1033,80 @@
               <Type>string</Type>
               <Pointer>
               </Pointer>
+            </Field>
+            <Field>
+              <Name>Номенклатура</Name>
+              <Caption>Номенклатура</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Номенклатура</Pointer>
+              <Join>
+                <table>Довідники.Номенклатура_Const.TABLE</table>
+                <field>Номенклатура</field>
+                <alias>join_tab_1</alias>
+              </Join>
+              <FieldAndAlias>
+                <table>join_tab_1</table>
+                <field>Довідники.Номенклатура_Const.Назва</field>
+              </FieldAndAlias>
+            </Field>
+            <Field>
+              <Name>Кількість</Name>
+              <Caption>Кількість</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>numeric</Type>
+              <Pointer>
+              </Pointer>
+            </Field>
+            <Field>
+              <Name>Сума</Name>
+              <Caption>Сума</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>numeric</Type>
+              <Pointer>
+              </Pointer>
+            </Field>
+            <Field>
+              <Name>Склад</Name>
+              <Caption>Склад</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Склад</Pointer>
+              <Join>
+                <table>Довідники.Склад_Const.TABLE</table>
+                <field>Склад</field>
+                <alias>join_tab_2</alias>
+              </Join>
+              <FieldAndAlias>
+                <table>join_tab_2</table>
+                <field>Довідники.Склад_Const.Назва</field>
+              </FieldAndAlias>
+            </Field>
+            <Field>
+              <Name>Автор</Name>
+              <Caption>Автор</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Користувачі</Pointer>
+              <Join>
+                <table>Довідники.Користувачі_Const.TABLE</table>
+                <field>Автор</field>
+                <alias>join_tab_3</alias>
+              </Join>
+              <FieldAndAlias>
+                <table>join_tab_3</table>
+                <field>Довідники.Користувачі_Const.Назва</field>
+              </FieldAndAlias>
             </Field>
           </Fields>
         </TabularList>
@@ -1032,6 +1220,15 @@
           <SortField>0</SortField>
           <WherePeriod>0</WherePeriod>
         </Field>
+        <Field>
+          <Name>Автор</Name>
+          <Desc>
+          </Desc>
+          <Type>
+          </Type>
+          <SortField>0</SortField>
+          <WherePeriod>0</WherePeriod>
+        </Field>
       </Fields>
       <AllowDocument>
         <Item>
@@ -1090,6 +1287,24 @@
               <Pointer>
               </Pointer>
             </Field>
+            <Field>
+              <Name>Автор</Name>
+              <DocField>Автор</DocField>
+              <SqlType>
+              </SqlType>
+              <WherePeriod>0</WherePeriod>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Користувачі</Pointer>
+              <Join>
+                <table>Довідники.Користувачі_Const.TABLE</table>
+                <field>Автор</field>
+                <alias>join_tab_1</alias>
+              </Join>
+              <FieldAndAlias>
+                <table>join_tab_1</table>
+                <field>Довідники.Користувачі_Const.Назва</field>
+              </FieldAndAlias>
+            </Field>
           </Fields>
         </TabularList>
         <TabularList>
@@ -1137,6 +1352,24 @@
               <Type>string</Type>
               <Pointer>
               </Pointer>
+            </Field>
+            <Field>
+              <Name>Автор</Name>
+              <DocField>Автор</DocField>
+              <SqlType>
+              </SqlType>
+              <WherePeriod>0</WherePeriod>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Користувачі</Pointer>
+              <Join>
+                <table>Довідники.Користувачі_Const.TABLE</table>
+                <field>Автор</field>
+                <alias>join_tab_1</alias>
+              </Join>
+              <FieldAndAlias>
+                <table>join_tab_1</table>
+                <field>Довідники.Користувачі_Const.Назва</field>
+              </FieldAndAlias>
             </Field>
           </Fields>
         </TabularList>

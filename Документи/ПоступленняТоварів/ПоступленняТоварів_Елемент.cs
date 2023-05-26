@@ -30,10 +30,10 @@ namespace StorageAndTrade
         Entry Коментар = new Entry() { WidthRequest = 920 };
         Номенклатура_PointerControl Номенклатура = new Номенклатура_PointerControl() { Caption = "Номенклатура", WidthPresentation = 300 };
         Склад_PointerControl Склад = new Склад_PointerControl() { Caption = "Склад", WidthPresentation = 300 };
-
         NumericControl Кількість = new NumericControl();
-
         NumericControl Сума = new NumericControl();
+        Користувачі_PointerControl Автор = new Користувачі_PointerControl() { Caption = "Автор", WidthPresentation = 300 };
+        CompositePointerControl Основа = new CompositePointerControl();
 
         #endregion
 
@@ -77,9 +77,11 @@ namespace StorageAndTrade
 
         protected override void CreateContainer3(VBox vBox)
         {
+            //Автор
+            CreateField(vBox, null, Автор);
 
-
-
+            //Основа
+            CreateField(vBox, null, Основа);
         }
 
         protected override void CreateContainer4(VBox vBox)
@@ -101,7 +103,8 @@ namespace StorageAndTrade
             Склад.Pointer = ПоступленняТоварів_Objest.Склад;
             Кількість.Value = ПоступленняТоварів_Objest.Кількість;
             Сума.Value = ПоступленняТоварів_Objest.Сума;
-
+            Автор.Pointer = ПоступленняТоварів_Objest.Автор;
+            Основа.Pointer = ПоступленняТоварів_Objest.Основа;
         }
 
         protected override void GetValue()
@@ -113,7 +116,8 @@ namespace StorageAndTrade
             ПоступленняТоварів_Objest.Склад = Склад.Pointer;
             ПоступленняТоварів_Objest.Кількість = Кількість.Value;
             ПоступленняТоварів_Objest.Сума = Сума.Value;
-
+            ПоступленняТоварів_Objest.Автор = Автор.Pointer;
+            ПоступленняТоварів_Objest.Основа = Основа.Pointer;
         }
 
         #endregion

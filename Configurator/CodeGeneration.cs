@@ -27,7 +27,7 @@ limitations under the License.
  * Конфігурації "Нова конфігурація"
  * Автор 
   
- * Дата конфігурації: 26.05.2023 10:49:11
+ * Дата конфігурації: 26.05.2023 13:45:25
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон CodeGeneration.xslt
@@ -1374,6 +1374,8 @@ namespace StorageAndTrade_1_0.Документи
         public const string Кількість = "col_a3";
         public const string Сума = "col_a4";
         public const string Склад = "col_a5";
+        public const string Автор = "col_a6";
+        public const string Основа = "col_a7";
     }
 
     public static class ПоступленняТоварів_Export
@@ -1440,6 +1442,20 @@ namespace StorageAndTrade_1_0.Документи
                     xmlWriter.WriteString(obj.Склад.GetPresentation());
                   
             xmlWriter.WriteEndElement(); //Склад
+            xmlWriter.WriteStartElement("Автор");
+            xmlWriter.WriteAttributeString("type", "pointer");
+            
+                    xmlWriter.WriteAttributeString("pointer", "Довідники.Користувачі");
+                    xmlWriter.WriteAttributeString("uid", obj.Автор.UnigueID.ToString());
+                    xmlWriter.WriteString(obj.Автор.GetPresentation());
+                  
+            xmlWriter.WriteEndElement(); //Автор
+            xmlWriter.WriteStartElement("Основа");
+            xmlWriter.WriteAttributeString("type", "composite_pointer");
+            
+                xmlWriter.WriteRaw(((UuidAndText)obj.Основа).ToXml());
+              
+            xmlWriter.WriteEndElement(); //Основа
 
             xmlWriter.WriteEndElement(); //root
             xmlWriter.WriteEndDocument();
@@ -1450,7 +1466,7 @@ namespace StorageAndTrade_1_0.Документи
     public class ПоступленняТоварів_Objest : DocumentObject
     {
         public ПоступленняТоварів_Objest() : base(Config.Kernel!, "tab_a04", "ПоступленняТоварів",
-             new string[] { "docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5" }) 
+             new string[] { "docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7" }) 
         {
             Назва = "";
             ДатаДок = DateTime.MinValue;
@@ -1460,6 +1476,8 @@ namespace StorageAndTrade_1_0.Документи
             Кількість = 0;
             Сума = 0;
             Склад = new Довідники.Склад_Pointer();
+            Автор = new Довідники.Користувачі_Pointer();
+            Основа = new UuidAndText();
             
         }
         
@@ -1482,6 +1500,8 @@ namespace StorageAndTrade_1_0.Документи
                 Кількість = (base.FieldValue["col_a3"] != DBNull.Value) ? (decimal)base.FieldValue["col_a3"] : 0;
                 Сума = (base.FieldValue["col_a4"] != DBNull.Value) ? (decimal)base.FieldValue["col_a4"] : 0;
                 Склад = new Довідники.Склад_Pointer(base.FieldValue["col_a5"]);
+                Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a6"]);
+                Основа = (base.FieldValue["col_a7"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a7"] : new UuidAndText();
                 
                 BaseClear();
                 return true;
@@ -1501,6 +1521,8 @@ namespace StorageAndTrade_1_0.Документи
             base.FieldValue["col_a3"] = Кількість;
             base.FieldValue["col_a4"] = Сума;
             base.FieldValue["col_a5"] = Склад.UnigueID.UGuid;
+            base.FieldValue["col_a6"] = Автор.UnigueID.UGuid;
+            base.FieldValue["col_a7"] = Основа;
             
             bool result = BaseSave();
             
@@ -1537,6 +1559,8 @@ namespace StorageAndTrade_1_0.Документи
             copy.Кількість = Кількість;
             copy.Сума = Сума;
             copy.Склад = Склад;
+            copy.Автор = Автор;
+            copy.Основа = Основа;
             
 
             copy.New();
@@ -1576,6 +1600,8 @@ namespace StorageAndTrade_1_0.Документи
         public decimal Кількість { get; set; }
         public decimal Сума { get; set; }
         public Довідники.Склад_Pointer Склад { get; set; }
+        public Довідники.Користувачі_Pointer Автор { get; set; }
+        public UuidAndText Основа { get; set; }
         
     }
     
@@ -1692,6 +1718,8 @@ namespace StorageAndTrade_1_0.Документи
         public const string Кількість = "col_a3";
         public const string Сума = "col_a4";
         public const string Склад = "col_a5";
+        public const string Автор = "col_a6";
+        public const string Основа = "col_a7";
     }
 
     public static class ПродажТоварів_Export
@@ -1758,6 +1786,20 @@ namespace StorageAndTrade_1_0.Документи
                     xmlWriter.WriteString(obj.Склад.GetPresentation());
                   
             xmlWriter.WriteEndElement(); //Склад
+            xmlWriter.WriteStartElement("Автор");
+            xmlWriter.WriteAttributeString("type", "pointer");
+            
+                    xmlWriter.WriteAttributeString("pointer", "Довідники.Користувачі");
+                    xmlWriter.WriteAttributeString("uid", obj.Автор.UnigueID.ToString());
+                    xmlWriter.WriteString(obj.Автор.GetPresentation());
+                  
+            xmlWriter.WriteEndElement(); //Автор
+            xmlWriter.WriteStartElement("Основа");
+            xmlWriter.WriteAttributeString("type", "composite_pointer");
+            
+                xmlWriter.WriteRaw(((UuidAndText)obj.Основа).ToXml());
+              
+            xmlWriter.WriteEndElement(); //Основа
 
             xmlWriter.WriteEndElement(); //root
             xmlWriter.WriteEndDocument();
@@ -1768,7 +1810,7 @@ namespace StorageAndTrade_1_0.Документи
     public class ПродажТоварів_Objest : DocumentObject
     {
         public ПродажТоварів_Objest() : base(Config.Kernel!, "tab_a05", "ПродажТоварів",
-             new string[] { "docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5" }) 
+             new string[] { "docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7" }) 
         {
             Назва = "";
             ДатаДок = DateTime.MinValue;
@@ -1778,6 +1820,8 @@ namespace StorageAndTrade_1_0.Документи
             Кількість = 0;
             Сума = 0;
             Склад = new Довідники.Склад_Pointer();
+            Автор = new Довідники.Користувачі_Pointer();
+            Основа = new UuidAndText();
             
         }
         
@@ -1800,6 +1844,8 @@ namespace StorageAndTrade_1_0.Документи
                 Кількість = (base.FieldValue["col_a3"] != DBNull.Value) ? (decimal)base.FieldValue["col_a3"] : 0;
                 Сума = (base.FieldValue["col_a4"] != DBNull.Value) ? (decimal)base.FieldValue["col_a4"] : 0;
                 Склад = new Довідники.Склад_Pointer(base.FieldValue["col_a5"]);
+                Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a6"]);
+                Основа = (base.FieldValue["col_a7"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a7"] : new UuidAndText();
                 
                 BaseClear();
                 return true;
@@ -1819,6 +1865,8 @@ namespace StorageAndTrade_1_0.Документи
             base.FieldValue["col_a3"] = Кількість;
             base.FieldValue["col_a4"] = Сума;
             base.FieldValue["col_a5"] = Склад.UnigueID.UGuid;
+            base.FieldValue["col_a6"] = Автор.UnigueID.UGuid;
+            base.FieldValue["col_a7"] = Основа;
             
             bool result = BaseSave();
             
@@ -1855,6 +1903,8 @@ namespace StorageAndTrade_1_0.Документи
             copy.Кількість = Кількість;
             copy.Сума = Сума;
             copy.Склад = Склад;
+            copy.Автор = Автор;
+            copy.Основа = Основа;
             
 
             copy.New();
@@ -1894,6 +1944,8 @@ namespace StorageAndTrade_1_0.Документи
         public decimal Кількість { get; set; }
         public decimal Сума { get; set; }
         public Довідники.Склад_Pointer Склад { get; set; }
+        public Довідники.Користувачі_Pointer Автор { get; set; }
+        public UuidAndText Основа { get; set; }
         
     }
     

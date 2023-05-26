@@ -26,14 +26,13 @@ namespace StorageAndTrade
         DateTimeControl ДатаДок = new DateTimeControl();
 
         Entry НомерДок = new Entry() { /* WidthRequest = 500 */ };
-
         Entry Коментар = new Entry() {  WidthRequest = 920  };
         Номенклатура_PointerControl Номенклатура = new Номенклатура_PointerControl() { Caption = "Номенклатура", WidthPresentation = 300 };
         Склад_PointerControl Склад = new Склад_PointerControl() { Caption = "Склад", WidthPresentation = 300 };
-
         NumericControl Кількість = new NumericControl();
-
         NumericControl Сума = new NumericControl();
+        Користувачі_PointerControl Автор = new Користувачі_PointerControl() { Caption = "Автор", WidthPresentation = 300 };
+        CompositePointerControl Основа = new CompositePointerControl();
 
         #endregion
 
@@ -77,7 +76,11 @@ namespace StorageAndTrade
 
         protected override void CreateContainer3(VBox vBox)
         {
+            //Автор
+            CreateField(vBox, null, Автор);
 
+            //Основа
+            CreateField(vBox, null, Основа);
         }
 
         protected override void CreateContainer4(VBox vBox)
@@ -99,7 +102,8 @@ namespace StorageAndTrade
             Кількість.Value = ПродажТоварів_Objest.Кількість;
             Сума.Value = ПродажТоварів_Objest.Сума;
             Склад.Pointer = ПродажТоварів_Objest.Склад;
-
+            Автор.Pointer = ПродажТоварів_Objest.Автор;
+            Основа.Pointer = ПродажТоварів_Objest.Основа;
         }
 
         protected override void GetValue()
@@ -111,7 +115,8 @@ namespace StorageAndTrade
             ПродажТоварів_Objest.Кількість = Кількість.Value;
             ПродажТоварів_Objest.Сума = Сума.Value;
             ПродажТоварів_Objest.Склад = Склад.Pointer;
-
+            ПродажТоварів_Objest.Автор = Автор.Pointer;
+            ПродажТоварів_Objest.Основа = Основа.Pointer;
         }
 
         #endregion
@@ -129,8 +134,6 @@ namespace StorageAndTrade
                 MsgError(ex);
                 return false;
             }
-
-
 
             UnigueID = ПродажТоварів_Objest.UnigueID;
             Caption = ПродажТоварів_Objest.Назва;
