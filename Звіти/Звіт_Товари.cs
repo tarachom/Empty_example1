@@ -124,6 +124,12 @@ namespace StorageAndTrade
             vBox.PackStart(hBoxNomenklatura, false, false, 5);
 
             hBoxNomenklatura.PackStart(Номенклатура, false, false, 5);
+
+            //Склад
+            HBox hBoxSklad = new HBox() { Halign = Align.End };
+            vBox.PackStart(hBoxSklad, false, false, 5);
+
+            hBoxSklad.PackStart(Склад, false, false, 5);
         }
 
         void CreateContainer2(VBox vBox)
